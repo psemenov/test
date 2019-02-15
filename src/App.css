@@ -1,0 +1,113 @@
+:root {
+  --mainBlack: #252329;
+  --mainLightBlack: #38373c;
+  --mainOrange: #FF7F11;
+  --mainDarkOrange: #D1680E;
+  --mainRed: #FE4A49;
+  --mainDarkRed: #D03D3C;
+  --mainGreen: #5FAD56;
+  --mainDarkGreen: #4E8E47;
+  --mainGrey: #7E8287;
+  --mainLightGrey: #95989C;
+  --mainDarkGrey: #686B6F;
+  --mainWhite: #F3F3F3;
+  --mainDarkWhite: #DDDDDD;
+}
+
+body {
+  font-family: "Oswald", sans-serif !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+}
+
+.text-white {
+  color: var(--mainWhite) !impornant;
+}
+
+.search-input {
+  background-color: var(--mainDarkWhite) !important;
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+  color: var(--mainDarkGrey) !important;
+}
+
+.search-input::placeholder {
+  color: var(--mainLightGrey) !important;
+}
+
+.search-input:focus, .search-input:active {
+  outline: none;
+  box-shadow: none !important;
+  border: 1.5px solid var(--mainGrey) !important;
+}
+
+.search-button:focus  {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.search-button:active {
+  background-color: var(--mainDarkGrey) !important;
+}
+
+.search-button {
+  background-color: var(--mainGrey) !important;
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+}
+
+.search-icon {
+  color: var(--mainWhite);
+}
+
+.search-button:hover .search-icon {
+  color: var(--mainDarkWhite);
+}
+
+.text-white {
+  color: var(--mainWhite);
+}
+
+.header-link-group  {
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.header-link {
+  background-color: var(--mainDarkWhite) !important;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+@media (max-width: 400px) {
+  .header-link {
+    height: 40px;
+    width: 40px;
+  }
+  .header-logo img {
+    height: 50px;
+  }
+}
+
+
+
+.header-link:hover {
+  background-color: #C9C9C9 !important;
+}
+
+.header-navbar .nav-item {
+  border-radius: 50% !important;
+  background-color: var(--mainDarkWhite) !important; 
+  height: 100%;
+  text-align: center;
+}
+
+.header-link-icon {
+  color: var(--mainGrey) !important;
+  font-size: 1.5rem;
+}
