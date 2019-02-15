@@ -4,46 +4,7 @@ import styled from 'styled-components';
 import logo from '../../logo.svg';
 import Dropdown from './Dropdown';
 import Search from './Search';
-const links = {
-	basses: [
-		{
-			id: 1,
-			linkTitle: 'all bass guitars',
-			linkPath: '/basses'
-		},
-		{
-			id: 2,
-			linkTitle: 'electic bass guitars',
-			linkPath: '/basses/electric'
-		},
-		{
-			id: 3,
-			linkTitle: 'acoustic bass guitars',
-			linkPath: '/basses/acoustic'
-		},
-		{
-			id: 4,
-			linkTitle: 'fretless bass guitars',
-			linkPath: '/basses/fretless'
-		},
-		{
-			id: 5,
-			linkTitle: '5 string bass guitars',
-			linkPath: '/basses/5-string'
-		},
-		{
-			id: 6,
-			linkTitle: '6 string bass guitars',
-			linkPath: '/basses/6-string'
-		},
-		{
-			id: 7,
-			linkTitle: 'left handed bass guitars',
-			linkPath: '/basses/left-handed'
-		}
-	]
-
-}
+import {headerLinks} from '../../headerLinks';
 
 export default class Header extends React.Component {
 	state = {
@@ -85,7 +46,7 @@ export default class Header extends React.Component {
 
 				</header>
 				<NavWrapper>
-					<nav className="navbar navbar-expand-md navbar-dark ml-0 py-0 px-md-3 px-0">
+					<nav className="navbar navbar-expand-md ml-0 py-0 px-md-3 px-0">
 							<button className="navbar-toggler py-3" data-toggle="collapse" data-target="#navbarCollapse" 
 							id="collapseButton" style={{width: "100%"} } 
 								onClick={this.handleToggle}>
@@ -94,20 +55,20 @@ export default class Header extends React.Component {
 	            </button>
 							<ul className="navbar-nav collapse navbar-collapse align-items-lg-center" id="navbarCollapse">
 								<li className="nav-item px-md-4">
-									<Dropdown linkTitle="bass guitars" linkPath="/basses" 
-									menuLinks={links.basses} id="bassesDropdown" smallScreen={this.state.toggle} />
+									<Dropdown linkTitle="bass guitars" linkPath="/products/basses" 
+									menuLinks={headerLinks.basses} id="bassesDropdown" smallScreen={this.state.toggle} />
 			          </li>
 			           <li className="nav-item px-md-4">
-									<Dropdown linkTitle="amps" linkPath="/amps" 
-									menuLinks={links.basses} id="ampsDropdown" smallScreen={this.state.toggle} />
+									<Dropdown linkTitle="amps" linkPath="/products/amps" 
+									menuLinks={headerLinks.amps} id="ampsDropdown" smallScreen={this.state.toggle} />
 			          </li>
 			          <li className="nav-item px-md-4">
-									<Dropdown linkTitle="pedals" linkPath="/pedals" 
-									menuLinks={links.basses} id="pedalsDropdown" smallScreen={this.state.toggle} />
+									<Dropdown linkTitle="pedals" linkPath="/products/pedals" 
+									menuLinks={headerLinks.pedals} id="pedalsDropdown" smallScreen={this.state.toggle} />
 			          </li>
 			          <li className="nav-item px-md-4">
-									<Dropdown linkTitle="accessories" linkPath="/accessories" 
-									menuLinks={links.basses} id="accessoriesDropdown" smallScreen={this.state.toggle} />
+									<Dropdown linkTitle="accessories" linkPath="/products/accessories" 
+									menuLinks={headerLinks.accessories} id="accessoriesDropdown" smallScreen={this.state.toggle} />
 			          </li>
 			          <li className="nav-item px-md-4">
 									<Link to="/help" className="nav-link">Help</Link>
@@ -121,7 +82,8 @@ export default class Header extends React.Component {
 }
 
 const NavWrapper = styled.nav`
-  background: var(--mainBlack);
+	background-color: var(--mainBlack) !important;
+
 	@media (max-width: 767px) {
 		.nav-item {
 			background-color: var(--mainLightBlack) !important;
@@ -133,6 +95,7 @@ const NavWrapper = styled.nav`
 			padding-left: 1rem;
 		}
 	}
+
 	.nav-link {
 		color: var(--mainWhite) !important;
 		font-size: 1.3rem;

@@ -1,11 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import $ from 'jquery';
 
 export default class Dropdown extends React.Component {
  	handleClick = () => {
- 		console.log(this.props.smallScreen);
  		if(this.props.smallScreen) document.getElementById('collapseButton').click();
  	}
 	render() {
@@ -17,12 +15,13 @@ export default class Dropdown extends React.Component {
 	    		{this.props.linkTitle}
 	    		
 	    	</Link>
-					
-
+				
 		    	<div className="dropdown-menu" aria-labelledby={this.props.id}>
 		    		{menuLinks.map(item => {
+		    			let linkpath = "/products/" + item.category;
+		    			if(item.type !== '') linkpath = linkpath + '/' + item.type;
 							return (
-		    				<Link className="dropdown-item " key={item.id} to={item.linkPath} 
+		    				<Link className="dropdown-item " key={item.id} to={linkpath}
 		    				onClick={this.handleClick}>{item.linkTitle}</Link>
 		    			);
 						})}
@@ -58,6 +57,7 @@ const DropdownWrapper = styled.div`
 		 border-radius: 0;
 		 margin: 0;
 		 padding: 0;
+		 border-top: 0.1rem solid var(--mainOrange);
 	}
 
 	.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus {
