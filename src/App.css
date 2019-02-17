@@ -21,32 +21,52 @@
 
 html, body {
   height: 100%;
+  border-style: 
 }
 
 body {
   font-family: "Oswald", sans-serif !important;
   background-color: var(--mainWhite) !important;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: column;
+  display: flex;   
+  flex-direction: column; 
 }
+
 #root {
-  min-height: 100%;
-  margin-bottom: -40px;
+  flex: 1 0 auto;
 }
+
 #footer {
-  color: var(--mainWhite);
+  color: var(--mainWhite) !important;
   background-color: var(--mainBlack) !important;
-  height: 40px;
+  flex-shrink: 0; 
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 1rem;
 }
 
-.text-white {
-  color: var(--mainWhite) !impornant;
+#footer a {
+    color: #C9C9C9 !important;
 }
 
+#footer a:hover {
+  text-decoration: none;
+  color: var(--mainLightGrey) !important;
+}
+.text-black {
+  color: var(--mainBlack) !important;
+}
+
+.text-darkred {
+  color: var(--mainDarkRed) !important; 
+}
+
+.text-green {
+  color: var(--mainGreen) !important;
+}
+
+.bg-orange {
+  background-color: var(--mainOrange) !important;
+}
 
 .search-input {
   background-color: var(--mainDarkWhite) !important;
