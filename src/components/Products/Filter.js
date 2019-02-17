@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InputRange from 'react-input-range';
 import styled from 'styled-components';
 import {headerLinks} from '../../headerLinks';
 
